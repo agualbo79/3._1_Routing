@@ -140,10 +140,10 @@ def format_title(word):
 
 @app.route('/formatted/<string:dni>')
 def format_dni(dni):
-    # Removemos caracteres no numericos 
+   
     dni_cleaned = dni.replace('.', '').replace('-', '')
 
-    # Verificamos que el DNI tiene exactamente 8 caracteres numéricos
+    
     if not dni_cleaned.isdigit() or len(dni_cleaned) != 8:
         return jsonify({'error': 'El DNI no es válido'})
 
@@ -238,7 +238,7 @@ def decode_morse(morse_code):
         morse_chars = morse_word.split('+')
         decoded_word = ''
         for morse_char in morse_chars:
-            if morse_char == '':  # Manejar el espacio en blanco como separador de letras
+            if morse_char == '':  
                 decoded_word += ' '
             else:
                 char_found = False
